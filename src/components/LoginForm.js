@@ -18,7 +18,11 @@ class LoginForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.onSubmit(this.state)
+    if (this.state.username.length != 0 && this.state.password.length != 0) {
+      this.props.onSubmit(this.state)
+    } else {
+      window.alert("please fill form")
+    }
   }
 
   render() {
