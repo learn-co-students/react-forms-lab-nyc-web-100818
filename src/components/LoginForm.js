@@ -22,7 +22,9 @@ class LoginForm extends React.Component {
   onFormSubmit = (e) => {
     e.preventDefault()
     // console.log(this.state);
-    
+    if (this.state.username.length > 0 && this.state.password.length > 0) {
+      return this.props.onSubmit(this.state)
+    }
   }
 
 
